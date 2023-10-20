@@ -1,0 +1,611 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+}
+
+.main-menu {
+    display: none;
+}
+
+.product-item .img-160px {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-title {
+    font-size: larger;
+}
+
+.product-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.product-item a h3 {
+    font-weight: bold;
+}
+
+/* Dành cho Moblie */
+.product-item {
+    transition: .3s;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    border-radius: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.product-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    border-radius: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.title-modal {
+    text-align: center;
+}
+
+.social-icon {
+    margin-top: 20px;
+    display: flex;
+}
+
+.footer-group {
+    padding: 15px;
+    background-color: #f1f2f6;
+}
+
+.col-3 a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.col-3 li {
+    display: flex;
+}
+
+.social-icon li {
+    list-style: none;
+}
+
+.social-icon li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.social-icon .fb a:hover {
+    transition: 1s;
+    background: blue;
+}
+
+.social-icon .tw i:hover {
+    transition: 1s;
+    color: blue;
+}
+
+.social-icon .in i:hover {
+    transition: 1s;
+    color: #d6249f;
+}
+
+.social-icon .ytb i:hover {
+    transition: 1s;
+    color: #ff0000;
+}
+
+.social-icon li a .fa {
+    color: #fff;
+    font-size: 20px;
+}
+
+.info {
+    position: relative;
+}
+
+.info li {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.info li span:nth-child(1) {
+    color: #000000;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.info li span {
+    color: #000000;
+}
+
+.info li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin-top: 16px;
+    transition: all 200ms ease-in;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background: #222;
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    padding: 8px 24px;
+}
+
+.btn--primary:hover {
+    background: #f00;
+}
+
+.btn--primary:active {
+    background: #f00;
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2);
+}
+
+.form__field {
+    width: 90%;
+    background: #a3a3a3;
+    color: #000000;
+    font: inherit;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+    border: 0;
+    outline: 0;
+    padding: 8px 4px;
+}
+
+.button-x {
+    position: relative;
+    top: -20px;
+    left: -7px;
+}
+
+.button-search {
+    background-color: #fff;
+    border: none;
+    height: 10px;
+    position: relative;
+    top: 10px;
+    left: -30px;
+    z-index: 999;
+}
+
+footer {
+    display: flex;
+}
+
+.footer-group h2{
+    text-align: left;
+}
+
+footer ul {
+    margin-left: -30px;
+    list-style-type: none;
+}
+
+.footer-group .row.ms-3 .col-md-4 ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-group .row.ms-3 .col-md-4 ul li a:hover {
+    color: #0062ff;
+    text-decoration: none;
+}
+
+.menu-desktop {
+    display: none;
+}
+
+.top-header img {
+    width: 100%;
+    height: 44px;
+    margin-bottom: 10px;
+}
+
+.sticky-sidebar .active {
+    display: none;
+}
+
+.login-form, .register-form {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.6);
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	display: none;
+	z-index: 999;
+}
+.login-form-content, .register-form-content {
+	width: 500px;
+	height: 600px;
+	background-color: #EFEFEF;
+	border-radius: 10px;
+	display: block;
+}
+
+.login-form-content form, .register-form-content form {
+	padding: 0 40px;
+}
+
+.login-form-content h2, .register-form-content h2 {
+	font-size: 14px;
+	padding: 12px 0;
+	border-bottom: 1px solid #a4a4a4;
+	position: relative;
+}
+
+.login-form-content h2 span, .register-form-content h2 span{
+	display: block;
+	position: absolute;
+	height: 30px;
+	padding: 0 6px;
+	border: 1px solid #a4a4a4;
+	right: 12px;
+	cursor: pointer;
+	top: 50%;
+	transform: translateY(-50%);
+	line-height: 30px;
+	color: #333;
+	border-radius: 5px;
+}
+/* Định dạng input và button */
+input[type="text"], input[type="password"], .login {
+	width: 100%;
+	padding: 10px;
+    margin-bottom: 20px;
+	border: 0.5px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.input_login{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+	border: 0.5px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+label {
+    float: left;
+}
+  
+.login {
+	background-color: #ff7f50;
+	color: #fff;
+	cursor: pointer;
+}
+  
+.login:hover {
+	background-color: #dd6e45;
+}
+
+input[type="text"] ~ .fa-eye-slash{
+    display: none;
+}
+input[type="password"] ~ .fa-eye{
+    display: none;
+}
+
+.password .fa-regular.fa-eye {
+	position: relative;
+    top: -44px;
+    left: 395px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.password .fa-regular.fa-eye-slash {
+	position: relative;
+    top: -44px;
+    left: 395px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.confirm-password .fa-regular.fa-eye {
+	position: relative;
+    top: -44px;
+    left: 395px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+  
+.confirm-password .fa-regular.fa-eye-slash {
+	position: relative;
+    top: -44px;
+    left: 395px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.sticky-sidebar.active {
+    display: none;
+}
+.tro-gia {
+    background: linear-gradient(90deg, #ef3f23, #ff8a00);
+    border-radius: 2px;
+    width: 150px;
+    height: 35px;
+    font-size: 70%;
+    ;
+    text-align: center;
+    position: relative;
+    top: -25px;
+    color: #ffffff;
+}
+label .check-box-effect {
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 100%;
+    border: 3px solid #dcdcdc;
+    border-radius: 5px;
+    display: block;
+}
+
+input[type="radio"]:checked+.check-box-effect {
+    border: 3px solid red;
+    height: 100%;
+    display: block;
+}
+
+label .check-box-effect-pkbh {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 100%;
+    border: 3px solid #dcdcdc;
+    border-radius: 5px;
+    display: block;
+}
+
+input[type="radio"]:checked+.check-box-effect-pkbh {
+    border: 3px solid red;
+    width: 300px;
+    height: 100%;
+    display: block;
+}
+.modal-body img {
+    float: left;
+}
+.display-none {
+    display: none;
+}
+.center-a{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+.button-hover-thanhcong:hover{
+    background-color: chartreuse;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+input.invalid {
+    border: 1px solid red;
+}
+
+/* Dành cho Desktop */
+@media (min-width: 767.98px) {
+    .main-menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-menu>li {
+        display: inline-block;
+    }
+
+    .main-menu>li>a {
+        color: #333;
+        text-decoration: none;
+        padding: 5px 10px;
+        display: block;
+        text-align: center;
+    }
+
+    .main-menu>li>a:hover {
+        color: red;
+    }
+
+    label .check-box-effect {
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 800px;
+        height: 70px;
+        border: 3px solid #dcdcdc;
+        border-radius: 5px;
+        display: block;
+    }
+    
+    input[type="radio"]:checked+.check-box-effect {
+        border: 3px solid red;
+        width: 800px;
+        height: 70px;
+        display: block;
+    }
+    
+    label .check-box-effect-pkbh {
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 300px;
+        height: 70px;
+        border: 3px solid #dcdcdc;
+        border-radius: 5px;
+        display: block;
+    }
+    
+    input[type="radio"]:checked+.check-box-effect-pkbh {
+        border: 3px solid red;
+        width: 300px;
+        height: 70px;
+        display: block;
+    }
+    .modal-body img {
+        float: left;
+    }
+
+    .form-1 {
+        border: 1px solid #333;
+        display: none;
+    }
+
+    
+
+    
+    .col-md-10 img {
+        height: 100%;
+    }
+
+    .giam-gia {
+        border-radius: 2px;
+        font-size: 100%;
+        text-align: center;
+        display: inline-table;
+        color: #ffffff;
+        top: -180px;
+        left: -10px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 70"><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><image width="256" height="100" xlink:href="data:image/png;base64,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"/></g></g></svg>') 100% no-repeat;
+    }
+
+    .button-x {
+        position: relative;
+        top: -20px;
+        left: -7px;
+    }
+
+    .menu-desktop {
+        display: block;
+    }
+
+    footer {
+        display: block;
+    }
+
+    .col-md-4 ul {
+        list-style-type: none;
+    }
+
+    .footer-group .row.ms-3 .col-md-4 ul li a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .click-xem-them {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #333;
+        border-radius: 10px;
+        box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
+    }
+
+    .item-xem-them {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        ;
+    }
+
+    .none1 {
+        display: none;
+    }
+
+    .small-title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    
+
+    .sticky-sidebar.active {
+        display: block;
+    }
+
+    .sticky-sidebar .banner-left {
+        left: calc(((100vw - 1200px)/2) - 150px);
+    }
+
+    .sticky-sidebar .banner-right {
+        right: calc(((100vw - 1200px)/2) - 150px);
+    }
+
+    .sticky-sidebar a {
+        position: fixed;
+        top: 195px;
+        z-index: 999;
+    }
+
+    a {
+        text-decoration: none;
+        transition: .2s;
+        color: #288ad6;
+    }
+
+    .sticky-sidebar a img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    img {
+        border: 0;
+    }
+
+    .sticky-sidebar .active {
+        display: block;
+    }
+}

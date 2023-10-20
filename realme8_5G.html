@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hài Hước Store - Xiaomi 12T</title>
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="imgage/jpg" href="imgage/logo.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styleSP.css">
+</head>
+
+<body>
+    <div class="container-xl">
+        <header>
+            <div class="top-header">
+                <img src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2023/03/banner/big4-1200-44-1200x44.png"
+                    class="img-fluid">
+            </div>
+
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="search">
+                    <input class="search-box" name="search" type="search" placeholder="Bạn muốn tìm...">
+                    <i class="fas fa-search"></i>
+                </div>
+
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="#"><img src="imgage/logo.jpg"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bandienthoai.html">Thu cũ</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="congnghe24h.html">Công Nghệ 24h</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="login-form" href="#">Đăng nhập</a>
+                            <div class="login-form">
+                                <div class="login-form-content">
+                                    <h2 align="center">Đăng nhập thông tin <span id="close-login">X Đóng</span></h2>
+                                    <form id="formLogin">
+                                        <h1 align="center">Đăng nhập</h1>
+                                        <label for="name">Tên đăng nhập:</label>
+                                        <input class="input_login" type="text" id="name" name="name" required>
+                                        <span class="error" id="nameError"></span><br>
+                                
+                                        <label for="password">Mật khẩu:</label>
+                                        <div class="password">
+                                            <input class="input_login" type="password" id="password" name="password" autocomplete="off">
+                                            <i class="fa-regular fa-eye" onclick="changeTypePassword()"></i>
+                                            <i class="fa-regular fa-eye-slash" onclick="changeTypePassword()"></i>
+                                            <span class="error" id="passwordError"></span>
+                                        </div>
+                                
+                                        <button type="submit" class="login" onclick="return validateformLogin()">Đăng nhập</button>
+                                        <p>Bạn chưa có tài khoản? <a href="#" id="register-form">Đăng ký tại đây</a></p>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="register-form">
+                                <div class="register-form-content">
+                                    <h2 align="center">Đăng ký thông tin <span id="close-register">X Đóng</span></h2>
+                                    <form id="formRegister">
+                                        <h1 align="center">Đăng ký</h1>
+                                        <label>Tên đăng nhập:</label>
+                                        <input class="input_login" type="text" id="register-name" name="name" required>
+                                        <span class="error" id="register-nameError"></span><br>
+
+                                        <label>Mật khẩu:</label>
+                                        <div class="password">
+                                            <input class="input_login" type="password" id="register-password1"
+                                                name="password" autocomplete="off">
+                                            <i class="fa-regular fa-eye" onclick="changeTypePassword2()"></i>
+                                            <i class="fa-regular fa-eye-slash" onclick="changeTypePassword2()"></i>
+                                            <span class="error" id="register-passwordError"></span>
+                                        </div>
+
+                                        <label>Xác nhận mật khẩu: </label>
+                                        <div class="confirm-password">
+                                            <input class="input_login" type="password" id="register-password2"
+                                                name="password" autocomplete="off">
+                                            <i class="fa-regular fa-eye" onclick="changeTypePassword3()"></i>
+                                            <i class="fa-regular fa-eye-slash" onclick="changeTypePassword3()"></i>
+                                            <span class="error" id="register-passwordError2"></span>
+                                        </div>
+                                        <button type="submit" class="login" onclick="return validateformRegister()">Đăng
+                                            ký</button>
+                                        <p>Bạn đã có tài khoản? <a href="#" id="login-form2">Đăng nhập tại đây</a></p>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                        </li>
+                        <li class="nav-item">
+                            <form class="form-inline">
+                                <div class="input-group">
+                                    <div class="form-search-box">
+                                        <input class="form-search" type="text" placeholder="Tìm kiếm"
+                                            aria-label="Search">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div>
+                <div class="sticky-sidebar active">
+                    <a href="#" class="qc-left"><img width="80" height="300" style="cursor:pointer"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2023/05/banner/Trai-80x271.png"
+                            alt="Liễn Trái"></a>
+                    <a href="#" class="qc-right"><img width="80" height="300" style="cursor:pointer"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2023/05/banner/Phai-80x271.png"
+                            alt="Liễn Phải"></a>
+                </div>
+
+                <div>
+                    <div>
+                        <h5>Điện thoại Realme 8 5G| Chính hãng</h5>
+                        <div class="slideshow-container">
+                            <div class="mySlides">
+                                <img src="imgage/realme/realme8_5g_1.webp" alt="" width="400px" height="400px">
+                            </div>
+                            <div class="mySlides">
+                                <img src="imgage/realme/realme8_5g_2.webp" alt="" width="400px" height="400px">
+                            </div>
+                            <div class="mySlides">
+                                <img src="imgage/realme/realme8_5g_3.webp" alt="" width="400px" height="400px">
+                            </div>
+                            <div class="mySlides">
+                                <img src="imgage/realme/realme8_5g_4.webp" alt="" width="400px" height="400px">
+                            </div>
+                            <div class="mySlides">
+                                <img src="imgage/realme/realme8_5g_5.webp" alt="" width="400px" height="400px">
+                            </div>
+                            <div class="thumbnail-container">
+                                <img class="thumbnail fade" src="imgage/realme/realme8_5g_1.webp"
+                                    onclick="currentSlide(1)">
+                                <img class="thumbnail fade" src="imgage/realme/realme8_5g_2.webp"
+                                    onclick="currentSlide(2)">
+                                <img class="thumbnail fade" src="imgage/realme/realme8_5g_3.webp"
+                                    onclick="currentSlide(3)">
+                                <img class="thumbnail fade" src="imgage/realme/realme8_5g_4.webp"
+                                    onclick="currentSlide(4)">
+                                <img class="thumbnail fade" src="imgage/realme/realme8_5g_5.webp"
+                                    onclick="currentSlide(5)">
+                            </div>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                    </div>
+
+                    <div class="gia">
+                        <h4 style="color: red; font-family:tahoma; font-size: 25px; display: inline-block;">6.290.000 đ</h4>
+                        <div style="display: inline; margin-left: 20px;"><s>7.990.000 đ</s></div>
+
+                        <div class="list-gia">
+                            <div class="box">128 GB <h6>6.290.000 đ</h6></div>
+                            <div class="box">256 GB <h6>7.990.000 đ</h6></div>
+                        </div>
+                    
+                        <div>
+                            <h4>Màu sắc:</h4>
+                            <div class="box1">Xám</div>
+                            <div class="box1">Xanh dương</div>
+                            <div class="box1">Bạc</div>
+                        </div>
+                        <button class="mua" id="buy-form">
+                            Mua ngay
+                        </button>
+                        <div class="buy-form">
+                            <div class="buy-form-content">
+                                <div id="thongtinnhanhang" class="block-box">
+                                    <div class="block-customer">
+                                        <h2 align="center">Thông tin đặt hàng<span id="close-buy">X Đóng</span></h2>
+                                        <hr>
+                                        <div class="mt-2">
+                                            <form id="myForm">
+                                                <p>Thông tin khách hàng</p>
+                                                <input type="text" placeholder="Họ và tên(bắt buộc)" maxlength="50"
+                                                    autocomplete="off" class="mb-2" id="hoten">
+                                                <span class="error" id="hotenError" style="margin-bottom: 10px;"></span>
+                                                <input type="number" placeholder="Số điện thoại(bắt buộc)"
+                                                    maxlength="10" autocomplete="off" class="mb-2" id="phone"
+                                                    name="sdt">
+                                                <span class="error" id="sdtError"></span>
+                                                <input type="email"
+                                                    placeholder="Email(Vui lòng điền email để nhận hoá đơn)"
+                                                    maxlength="100" autocomplete="off" id="email">
+                                                <span class="error" id="emailError"></span>
+
+                                                <p>Chọn cách thức giao hàng</p>
+                                                <div style="display: flex; justify-content: space-evenly;">
+                                                    <label for="nhan-tai-cua-hang">
+                                                        <input id="nhan-tai-cua-hang" type="radio" name="giaohang"> Nhận
+                                                        tại
+                                                        cửa
+                                                        hàng
+                                                    </label>
+                                                    <label for="giao-hang-tan-noi">
+                                                        <input id="giao-hang-tan-noi" type="radio" name="giaohang"> Giao
+                                                        hàng tận
+                                                        nơi
+                                                    </label>
+                                                </div>
+
+                                                <div class="address">
+                                                    <select class="address-tp">
+                                                        <option>Hồ Chí Minh</option>
+                                                        <option>Hà Nội</option>
+                                                        <option>Đà Nẵng</option>
+                                                        <option>Cần Thơ</option>
+                                                        <option>Hải Dương</option>
+                                                        <option>Bình Định</option>
+                                                        <option>Tây Ninh</option>
+                                                        <option>Bà Rịa - Vũng Tàu</option>
+                                                        <option>Bình Dương</option>
+                                                        <option>Cao Bằng</option>
+                                                        <option>Bình Phước</option>
+                                                        <option>Long An</option>
+                                                    </select>
+
+                                                    <select class="address-quan" label="Quận / Huyện">
+                                                        <option>Quận / Huyện</option>
+                                                        <option>Quận 1</option>
+                                                        <option>Quận 2</option>
+                                                        <option>Quận 3</option>
+                                                        <option>Quận 4</option>
+                                                        <option>Quận 5</option>
+                                                        <option>Quận 6</option>
+                                                        <option>Quận 7</option>
+                                                        <option>Quận 8</option>
+                                                        <option>Quận 9</option>
+                                                        <option>Quận 10</option>
+                                                        <option>Quận 11</option>
+                                                        <option>Quận 12</option>
+                                                        <option>Quận Thủ Đức</option>
+                                                        <option>Huyện Hóc Môn</option>
+                                                        <option>Huyện Bình Chánh</option>
+                                                        <option>Huyện Củ Chi</option>
+                                                        <option>Quận Tân Bình</option>
+                                                        <option>Quận Bình Thạnh</option>
+                                                        <option>Quận Gì Vấp</option>
+                                                        <option>Quận Bình Tân</option>
+                                                        <option>Quận Tân Phú</option>
+                                                        <option>Quận Phú Nhuận</option>
+                                                    </select>
+
+                                                    <select style="width: 97%; margin-bottom: 20px;">
+                                                        <option>Chọn địa chỉ cửa hàng</option>
+                                                        <option>140 Lê Trọng Tấn, Tây Thạnh, Tân Phú, TP. HCM</option>
+                                                        <option>1 Bùi Xuân Phái, Tây Thạnh, Tân Phú, TP. HCM</option>
+                                                        <option>10 Lê Trọng Tấn, Tây Thạnh, Tân Phú, TP. HCM</option>
+                                                    </select>
+                                                </div>
+
+                                                <input type="text" style="height: 70px;" placeholder="Yêu cầu khác....">
+                                                <button type="submit" class="order" id="close-buy"
+                                                    onclick="return validateformBuy()">ĐỒNG Ý ĐẶT
+                                                    HÀNG</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="km">
+                            <div class="km-0">
+                                <img src="imgage/icon.svg" style="margin-bottom: 3px;"> Ưu đãi thêm
+                            </div>
+                            <div class="km-1">
+                                <ul type="square">
+                                    <li><a href="#">Bảo vệ sản phẩm toàn diện với dịch vụ bảo hành mở rộng</a></li>
+                                    <li><a href="#">Bảo hành 1 đổi 1 trong vòng 1 tháng</a></li>
+                                    <li><a href="#">Thu cũ đổi mới: giá thu cao - Thủ tục nhanh chóng - Trợ giá tốt nhất</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-info">
+                        <div class="box-warranty-info">
+                            <div class="box-title">
+                                <p>Thông tin sản phẩm</p>
+                            </div>
+                            <div class="box-content">
+                                <div class="item-warranty-info">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    <div class="description" style="margin-left: 19px;"> Mới, đầy đủ phụ
+                                        kiện từ nhà sản xuất</div>
+                                </div>
+                                <div class="item-warranty-info">
+                                    <i class="fa-solid fa-box-open"></i>
+                                    <div class="description" style="margin-left: 11px;"> Máy, cáp, sách hướng
+                                        dẫn, que chọc sim</div>
+                                </div>
+                                <div class="item-warranty-info">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                    <div class="description" style="margin-left: 16px;"> Bảo hành 12 tháng
+                                        tại trung tâm bảo hành Chính hãng. 1 đổi
+                                        1 trong 30 ngày nếu có lỗi phần cứng từ nhà sản xuất. <a target="_blank"
+                                            href="https://cellphones.com.vn/chinh-sach-bao-hanh" style="color:red">(xem
+                                            chi tiết)</a></div>
+                                </div>
+                                <div class="item-warranty-info">
+                                    <img src="imgage/vat.jpg" alt="" width="40px;" style="margin-left: -10px;">
+                                    <div class="description" style="margin-left: 4px;">Giá sản phẩm đã bao gồm VAT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="address-sp">
+                        <p>Có <b>9</b> cửa hàng có sản phẩm</p>
+                        <div class="ds-store">
+                            <div style="width: 600px;">
+                                <ul>
+                                    <li>
+                                        <a href="#" style="color: red; "><i
+                                                class="fa-solid fa-phone"></i>
+                                            02871000132 - </a>
+                                        <a href="#"><i
+                                                class="fa-solid fa-location-dot"></i>
+                                            134 Nguyễn Thái Học, P. Phạm Ngũ Lão, Q.1, TP HCM</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: red;"><i
+                                                class="fa-solid fa-phone"></i>
+                                            02871000132 - </a>
+                                        <a href="#"><i
+                                                class="fa-solid fa-location-dot"></i>
+                                            157-159 Nguyễn Thị Minh Khai, P. Phạm Ngũ Lão, Q. 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: red;"><i
+                                                class="fa-solid fa-phone"></i>
+                                            02871000132 - </a>
+                                        <a href="#"><i
+                                                class="fa-solid fa-location-dot"></i>
+                                            140 Lê Trọng Tấn, P. Tây Thạnh, Tân Phú, TP HCM</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: red; "><i
+                                                class="fa-solid fa-phone"></i>
+                                            02871000132 - </a>
+                                        <a href="#"><i
+                                                class="fa-solid fa-location-dot"></i>
+                                            134 Nguyễn Thái Học, P. Phạm Ngũ Lão, Q.1, TP HCM</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: red;"><i
+                                                class="fa-solid fa-phone"></i>
+                                            02871000132 - </a>
+                                        <a href="#"><i
+                                                class="fa-solid fa-location-dot"></i>
+                                            157-159 Nguyễn Thị Minh Khai, P. Phạm Ngũ Lão, Q. 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: red;"><i
+                                                class="fa-solid fa-phone"></i>
+                                            02871000132 - </a>
+                                        <a href="#"><i
+                                                class="fa-solid fa-location-dot"></i>
+                                            140 Lê Trọng Tấn, P. Tây Thạnh, Tân Phú, TP HCM</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: red; "><i
+                                                class="fa-solid fa-phone"></i>
+                                            02871000132 - </a>
+                                        <a href="#"><i
+                                                class="fa-solid fa-location-dot"></i>
+                                            134 Nguyễn Thái Học, P. Phạm Ngũ Lão, Q.1, TP HCM</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: red;"><i
+                                                class="fa-solid fa-phone"></i>
+                                            02871000132 - </a>
+                                        <a href="#"><i
+                                                class="fa-solid fa-location-dot"></i>
+                                            157-159 Nguyễn Thị Minh Khai, P. Phạm Ngũ Lão, Q. 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: red;"><i
+                                                class="fa-solid fa-phone"></i>
+                                            02871000132 - </a>
+                                        <a href="#"><i
+                                                class="fa-solid fa-location-dot"></i>
+                                            140 Lê Trọng Tấn, P. Tây Thạnh, Tân Phú, TP HCM</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infomation">
+                    <table style="border: 3px solid #EFEFEF;">
+                        <thead>
+                            <tr>
+                                <h3>Thông số kĩ thuật</h3>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr class="row1" bgcolor="#EFEFEF">
+                                <td class="col1">Kích thước màn hình</td>
+                                <td>6.1 inches</td>
+                            </tr>
+                            <tr class="row1">
+                                <td class="col1">Công nghệ màn hình</td>
+                                <td>OLED</td>
+                            </tr>
+                            <tr class="row1" bgcolor="#EFEFEF">
+                                <td class="col1">Camera sau</td>
+                                <td>12 MP, f/1.6, 26mm (wide), 1.4µm, dual pixel PDAF, OIS
+                                    12 MP, f/2.4, 120˚, 13mm (ultrawide), 1/3.6"</td>
+                            </tr>
+                            <tr class="row1">
+                                <td class="col1">Camera trước</td>
+                                <td>12 MP, f/2.2, 23mm (wide), 1/3.6"
+                                    SL 3D, (depth/biometrics sensor)</td>
+                            </tr>
+                            <tr class="row1" bgcolor="#EFEFEF">
+                                <td class="col1">Chipset</td>
+                                <td>Apple A14 Bionic (5 nm)</td>
+                            </tr>
+                            <tr class="row1">
+                                <td class="col1">Dung lượng RAM</td>
+                                <td>4 GB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="gioithieu">
+                    <div class="category">
+                        <div class="category-list">
+                            <h3>Điện thoại Realme 8 5G– Thiết kế sang trọng, hiệu năng mạnh mẽ</h3>
+                            <p style=" font-size: 15px;">Realme 8 5Gsở hữu màn hình Super AMOLED với tần số quét 120Hz giúp
+                                trải nghiệm chạm vuốt diễn ra mượt mà, camera AI 50MP chất lượng. Bên cạnh đó, điện thoại sẽ
+                                được chạy trên con chip Qualcomm Snapdragon 685 kết hợp với card đồ họa GPU Qualcomm Adreno
+                                610 mang lại trải nghiệm dùng ổn định. Điện thoại Xiaomi Redmi Note 12 mang lại thời gian sử
+                                dụng vượt trội với viên pin 5000mAh cùng sạc nhanh công suất 33W.
+                            <p>
+                            <h4 style="font-size: 25px;">Sức mạnh vượt trội với con chip Snapdragon 685</h4>
+                            <p style="font-size: 15px;">Realme 8 5Gđược trang bị con chip Snapdragon 685. Đây là bộ vi xử lý
+                                tầm trung của nhà Qualcomm, được xây dựng trên tiến trình 6nm.</p>
+                            <img src="imgage/Xiaomi/Xiaomi12T/xiaomi-mi-12t-pro-8.webp" style="width: 97%;">
+                            <p style="font-size: 15px;">Cụ thể hơn, bộ vi xử lý có 8 nhân, trong đó có 2 nhân hiệu suất dựa
+                                trên Cortex-A78 tốc độ 2.0 GHz và 6 nhân Cortex-A55 xung nhịp 1.8GHz. Bên cạnh đó là bộ nhớ
+                                lưu trữ RAM 4GB và bộ nhớ trong 128GB. Đây là mức dung lượng vừa đủ chứa ảnh, video hay các
+                                tựa game đang thịnh hành hiện nay.</p>
+                            <h4 style="font-size: 25px;">Camera 50MP, chụp ảnh chất lượng</h4>
+                            <p style="font-size: 15px;">Xiaomi Redmi Note 12 trang bị hệ thống 3 camera, gồm ống kính chính
+                                50MP, góc rộng 8 MP, cảm biến macro 2MP. Chủ yếu được bổ sung thêm các chế độ chụp khác để
+                                tạo ra bức ảnh có chiều sâu hơn ở từng khung cảnh.</p>
+                            <p style="font-size: 15px;">Điểm cộng của Xiaomi Redmi Note 12 đó là viền màn hình siêu mỏng nhờ
+                                đó không gian hiển thị lớn với nhiều chi tiết hơn. Tuy nhiên, màn hình iPhone 12 vẫn chỉ duy
+                                trì ở tần số 60Hz.</p>
+                            <img src="imgage/Xiaomi/XiaomiNote12/xiaomi-redmi-note-12-4g-2.webp" style="width: 97%;">
+                            <h4 style="font-size: 25px;">Thân máy nguyên khối cứng cáp & bền bỉ</h4>
+                            <p style="font-size: 15px;">Toàn thân máy được chế tác từ chất liệu nguyên khối cứng cáp, với
+                                khung máy làm từ thép không gỉ và hai mặt trước & sau được phủ kính cường lực Gorilla Glass.
+                                iPhone 12 cũng có khả năng chống nước và chống bụi theo tiêu chuẩn IP68 và hỗ trợ cả Apple
+                                Pay, đáp ứng nhu cầu sử dụng cần thiết của người dùng.</p>
+                        </div>
+                    </div>
+                    <div class="category-toggle" align="center">Xem thêm</div>
+    
+                    <h3 style="font-size: 25px; margin-top: 10px;">Xem thêm điện thoại khác</h3>
+                    <div id="slideshow">
+                        <div class="slide-wrapper">
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="iphone11ProMax.html"><img class="hinh_dienthoai"
+                                            src="imgage/iphone13-12-11ProMax/iphone-11.webp" /></a>
+                                    <h4>Iphone 11 Pro Max</h4>
+                                    <p>
+                                        <span>20.490.000 ₫</span>
+                                        <s>22.990.000 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-trang.png">
+                                        <span style="color: rgb(127, 123, 123);">7 đánh giá</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="iphone12ProMax.html"><img class="hinh_dienthoai"
+                                            src="imgage/iphone13-12-11ProMax/iphone-12.jpg" /></a>
+                                    <h4>Iphone 12 Pro Max</h4>
+                                    <p>
+                                        <span>24.990.000 ₫</span>
+                                        <s>28.990.000 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-trang.png">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="iphone13ProMax.html"><img class="hinh_dienthoai"
+                                            src="imgage/iphone/iphone_13.jpg" /></a>
+                                    <h4>Iphone 13 Pro Max</h4>
+                                    <p>
+                                        <span>33.490.000 ₫</span>
+                                        <s>35.990.000 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-trang.png">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="iphone14ProMax.html"><img class="hinh_dienthoai"
+                                            src="imgage/iphone/iphone_14promax.png" /></a>
+                                    <h4>Iphone 14 Pro Max</h4>
+                                    <p>
+                                        <span>37.490.000 ₫</span>
+                                        <s>39.990.000 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-trang.png">
+                                        <img src="imgage/star-trang.png">
+                                        <img src="imgage/star-trang.png">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="iphone11.html"><img class="hinh_dienthoai"
+                                            src="imgage/iphone11/iphone11e.jpg" /></a>
+                                    <h4>Iphone 11</h4>
+                                    <p>
+                                        <span>10.950.000 ₫</span>
+                                        <s>14.990.00 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="iphone12.html"><img class="hinh_dienthoai"
+                                            src="imgage/iphone12/iphone-12f.webp" /></a>
+                                    <h4>Iphone 12</h4>
+                                    <p>
+                                        <span>17.490.000 ₫</span>
+                                        <s>23.990.000 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="iphone13.html"><img class="hinh_dienthoai"
+                                            src="imgage/iphone13/iphone13a.jpg" /></a>
+                                    <h4>Iphone 13</h4>
+                                    <p>
+                                        <span>23.490.000 ₫</span>
+                                        <s>26.990.000 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="iphone14.html"><img class="hinh_dienthoai"
+                                            src="imgage/iphone13/iphone-13f.jpg" /></a>
+                                    <h4>Iphone 14</h4>
+                                    <p>
+                                        <span>28.050.000 ₫</span>
+                                        <s>34.990.000 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="samsunga03s.html"><img class="hinh_dienthoai"
+                                            src="imgage/samsung/a03s.jpg" /></a>
+                                    <h4>SamSung Galaxy A03S</h4>
+                                    <p>
+                                        <span>2.490.000 ₫</span>
+                                        <s>3.990.000 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-trang.png">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="samsunga12.html"><img class="hinh_dienthoai"
+                                            src="imgage/samsung/a12.jpg" /></a>
+                                    <h4>SamSung Galaxy A12</h4>
+                                    <p>
+                                        <span>4.000.000 ₫</span>
+                                        <s>4.690.000 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-trang.png">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="item">
+                                    <a href="samsunga72.html"><img class="hinh_dienthoai"
+                                            src="imgage/samsung/a72.jpg" /></a>
+                                    <h4>SamSung Galaxy A72</h4>
+                                    <p>
+                                        <span>4.990.000 ₫</span>
+                                        <s>5.990.000 ₫</s>
+                                        <br>
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-vang.png">
+                                        <img src="imgage/star-trang.png">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="prev1" onclick="prevSlide()">&#10094;</button>
+                        <button class="next1" onclick="nextSlide()">&#10095;</button>
+                    </div>
+                </div>
+
+                <div class="comment" style="clear: both;">
+                    <h2>Bình luận</h2>
+                    <input type="text" placeholder="Mời bạn bình luận và đặt câu hỏi">
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i>Gửi</button>
+                    <h4>Khách hàng 1</h4>
+                    <p>Cho hỏi mua tại cửa hàng có giảm được 1tr không ạ?</p>
+                    <span style="font-size: 10px; color: grey; margin-left: 6px;"><a href="#">Trả lời</a></span>
+                    <span style="font-size: 10px; color: grey; margin-left: 20px;">1 ngày trước</span>
+                    <div
+                        style="width: 0; height: 0; border-style: solid; border-width: 0 15px 15px 15px; border-color: transparent transparent #EFEFEF transparent; margin-left: 5px; margin-bottom: -1px;">
+                    </div>
+                    <div style="background-color: #EFEFEF; padding: 10px; border-radius: 10px;">
+                        <strong>Quản trị viên</strong>
+                        <p>
+                            Chào anh!<br>
+                            Dạ hiện bên em chưa hỗ trợ trừ giá trị quà tặng vào giá bán của sản phẩm này
+                            ạ, mong anh thông cảm
+                            Dạ nếu ưng ý sản phẩm anh cho em xin số điện thoại để em chuyển bộ phận tổng đài liên hệ tư
+                            vấn cụ thể hơn và chốt đơn hàng ngay cho mình hoặc anh có thể liên hệ tổng đài miễn phí DTHH
+                            18001060 ( ĐMX 18001061 ) để được hỗ trợ nhanh chóng nhé.
+                            Mong phản hồi từ anh ạ.
+                        </p>
+                    </div>
+
+                    <h4>Khách hàng 2</h4>
+                    <p>Mua máy trả góp máy củ hoặc máy mới thì cần SĐT người thân là bạn bè được không ạ em có CMND chip
+                        BLX.</p>
+                    <span style="font-size: 10px; color: grey;"><a href="#">Trả lời</a></span>
+                    <span style="font-size: 10px; color: grey; margin-left: 20px;">2 ngày trước</span>
+                    <div
+                        style="width: 0; height: 0; border-style: solid; border-width: 0 15px 15px 15px; border-color: transparent transparent #EFEFEF transparent; margin-left: 5px; margin-bottom: -1px;">
+                    </div>
+                    <div style="background-color: #EFEFEF; padding: 10px; border-radius: 10px;">
+                        <strong>Quản trị viên</strong>
+                        <p>
+                            Chào anh!<br>
+                            Dạ vấn đề cần số điện thoại người thân hay không còn phụ thuộc vào công ty tài chính anh
+                            nhé, không biết anh đang quan tâm sản phẩm nào cho em xin tên cụ thể để em tư vấn cho mình
+                            nhé ạ Mong nhận được phản hồi từ anh ạ
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-group">
+                <div class="row ms-3">
+                    <div class="col-md-4">
+                        <h2>Về Chúng Tôi</h2>
+                        <p> Hài Hước Store là một cửa hàng trực tuyến chuyên cung cấp các sản phẩm điện thoại di động
+                            hàng đầu từ các thương hiệu lớn như Apple, Samsung, Xiaomi, Oppo, Realme và nhiều hãng khác.
+                            Với đội ngũ chuyên gia có kinh nghiệm và am hiểu về sản phẩm, Hài Hước Store cam kết mang
+                            đến cho khách hàng những sản phẩm chất lượng và giá cả hợp lý nhất.</p>
+                        <ul class="social-icon">
+                            <li class="fb"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                            <li class="tw"><a href="https://twitter.com/?lang=vi"><i class="fa fa-twitter"></i></a></li>
+                            <li class="in"><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                            <li class="ytb"><a href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 middle-footer">
+                        <h2>Đường Dẫn</h2>
+                        <ul>
+                            <li><a href="index.html">Trang Chủ</a></li>
+                            <li><a href="gioithieu.html">Về Chúng Tôi</a></li>
+                            <li><a href="#">Thông Tin Liên Lạc</a></li>
+                            <li><a href="https://www.facebook.com/vonhuthao180903">Hào</a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100012782349971">Vương</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Thông Tin Liên Hệ</h2>
+                        <ul class="info">
+                            <li>
+                                <span><i class="fa fa-map-marker"></i></span>
+                                <span><a
+                                        href="https://www.google.com/maps/place/140+L%C3%AA+Tr%E1%BB%8Dng+T%E1%BA%A5n,+S%C6%A1n+K%E1%BB%B3,+T%C3%A2n+Ph%C3%BA,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.806527,106.626673,17z/data=!3m1!4b1!4m6!3m5!1s0x31752be2853ce7cd:0x4111b3b3c2aca14a!8m2!3d10.806527!4d106.6288617!16s%2Fg%2F11my1ty339?hl=vi-VN">140
+                                        Lê Trọng Tấn<br />
+                                        Quận Tân Phú, Thành Phố Hồ Chí
+                                        Minh<br />
+                                        Việt Nam</span></a>
+                            </li>
+                            <li>
+                                <span><i class="fa fa-phone"></i></span>
+                                <p><a href="#">+84 388 533 247</a>
+                                    <br />
+                                    <a href="#">+84 963 114 775</a>
+                                </p>
+                            </li>
+                            <li>
+                                <span><i class="fa fa-envelope"></i></span>
+                                <p><a
+                                        href="https://www.linkedin.com/in/v%C3%B5-nh%E1%BB%B1t-h%C3%A0o-221778271/">vonhuthao11235@gmail.com</a>
+                                    <a href="#">vuongtran975@gmail.com</a>
+                                </p>
+                            </li>
+                            <li>
+                                <form class="form">
+                                    <input type="email" class="form__field" placeholder="Đăng Ký Subscribe
+                                                Email" />
+                                    <button type="submit" class="btn
+                                                btn--primary uppercase">Gửi</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/javascript.js"></script>
+</body>
+
+</html>
